@@ -386,7 +386,7 @@ export default function DashboardProductDetails({
 }: {
   params: { id: string };
 }) {
-  const apiBase = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
+  const apiBase = "http://localhost:3001";
   const router = useRouter();
 
   const [product, setProduct] = useState<Product | null>(null);

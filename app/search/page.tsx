@@ -105,7 +105,7 @@ const SearchPage = async ({ searchParams: { search } }: Props) => {
               <p className="text-gray-600 max-w-md">
                 {search ? (
                   <>
-                    We couldn't find any results for <span className="font-medium">"{search}"</span>. 
+                    We could not find any results for <span className="font-medium">{search}</span>. 
                     Try checking your spelling or using more general terms.
                   </>
                 ) : (
@@ -127,78 +127,3 @@ const SearchPage = async ({ searchParams: { search } }: Props) => {
 };
 
 export default SearchPage;
-
-
-// app/search/page.tsx
-// import React from "react";
-// import Image from "next/image";
-// import { ProductItem, SectionTitle } from "@/components";
-
-// interface Props {
-//   searchParams: { search?: string };
-// }
-
-// // Helper to fetch and throw on non-OK
-// async function fetchJson(url: string) {
-//   const res = await fetch(url, { cache: "no-store" });
-//   if (!res.ok) {
-//     throw new Error(`Failed to fetch ${url}: ${res.status}`);
-//   }
-//   return res.json();
-// }
-
-// export default async function SearchPage({ searchParams }: Props) {
-//   const query = encodeURIComponent(searchParams.search || "").trim();
-//   const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-
-//   let products: Product[] = [];
-//   try {
-//     products = await fetchJson(`${apiBase}/api/search?query=${query}`);
-//   } catch (err) {
-//     console.error("Search error:", err);
-//     // optionally pass an error flag to the UI
-//   }
-
-//   return (
-//     <div className="bg-white font-sans">
-//       <SectionTitle title="Search Results" path={`Home / Search`} />
-
-//       <div className="max-w-6xl mx-auto px-6 py-12">
-//         {/* Query Header */}
-//         {query ? (
-//           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-8">
-//             Showing results for <span className="text-indigo-600">“{decodeURIComponent(query)}”</span>
-//           </h2>
-//         ) : (
-//           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-8">
-//             Please enter a search term above.
-//           </h2>
-//         )}
-
-//         {/* Products Grid */}
-//         {products.length > 0 ? (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-//             {products.map((product) => (
-//               <ProductItem key={product.id} product={product} color="black" />
-//             ))}
-//           </div>
-//         ) : (
-//           <div className="flex flex-col items-center py-20">
-//             <Image
-//               src="/no-results.svg"
-//               alt="No results"
-//               width={240}
-//               height={240}
-//               className="mb-6"
-//             />
-//             <p className="text-xl text-gray-600 mb-4">
-//               No products found for <strong>“{decodeURIComponent(query)}”</strong>
-//             </p>
-//             <p className="text-gray-500">Try a different keyword or browse our categories.</p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-

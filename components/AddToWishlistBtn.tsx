@@ -70,7 +70,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
     return;
   }
 
-  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+  const apiBase = "http://localhost:3001";
   try {
     // 1. Fetch user ID by email
     const userRes = await fetch(
@@ -146,7 +146,7 @@ const removeFromWishlistFun = async () => {
     return;
   }
 
-  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+  const apiBase = "http://localhost:3001";
   try {
     // 1. Fetch user ID by email
     const emailEncoded = encodeURIComponent(user.email);
@@ -212,7 +212,7 @@ const removeFromWishlistFun = async () => {
     return;
   }
 
-  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+  const apiBase = "http://localhost:3001";
   try {
     // 1. Get user ID by email
     const emailEncoded = encodeURIComponent(user.email);

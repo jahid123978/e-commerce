@@ -58,7 +58,7 @@ const AdminDashboardPage = () => {
         <div className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-2xl shadow-lg">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <h4 className="text-lg font-semibold mb-2">Today's Visitors</h4>
+              <h4 className="text-lg font-semibold mb-2">Today Visitors</h4>
               <p className="text-4xl font-bold mb-2">1,200</p>
               <div className="flex items-center gap-2 text-sm bg-white/10 px-3 py-1 rounded-full">
                 <FaArrowUp className="text-green-300" />

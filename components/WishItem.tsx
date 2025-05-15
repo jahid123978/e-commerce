@@ -24,7 +24,7 @@ const WishItem = ({
   const user = useSelector((state: any) => state.user.user);
   const router = useRouter();
   const [userId, setUserId] = useState<string>();
- const apiBase = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+ const apiBase = "http://localhost:3001";
   const openProduct = (slug: string): void => {
     router.push(`/product/${slug}`);
   };
