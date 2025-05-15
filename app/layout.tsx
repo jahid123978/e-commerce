@@ -1,10 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-
-import SessionProvider from "@/utils/SessionProvider";
-import Providers from "@/Providers";       
+import "./globals.css";      
 import ReduxProvider from "./ReduxProvider";  
 import { Footer, Header } from "@/components";
 import { getServerSession } from "next-auth";
@@ -30,13 +27,9 @@ export default async function RootLayout({
         {/* 1. ReduxProvider must wrap everything that needs access to the store */}
         <ReduxProvider>
           {/* 2. Your existing session and other providers */}
-          <SessionProvider session={session}>
             <Header />
-            <Providers>
-              {children}
-            </Providers>
+            {children}
             <Footer />
-          </SessionProvider>
         </ReduxProvider>
       </body>
     </html>
