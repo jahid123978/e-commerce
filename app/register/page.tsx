@@ -34,6 +34,7 @@ const RegisterPage = () => {
     // Store token, seed Redux, redirect
     localStorage.setItem("token", data.token);
     dispatch(loginSuccess({ user: data.user, token: data.token }));
+    toast.success("Registration successful")
     router.push("/");
   } catch (err: any) {
     dispatch(loginFailure(err.message));

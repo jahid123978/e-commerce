@@ -88,7 +88,6 @@ const AdminSingleOrder = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const params = useParams<{ id: string }>();
   const router = useRouter();
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -124,7 +123,6 @@ const AdminSingleOrder = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(order)
       });
-
       toast.success("Order updated successfully");
       router.refresh();
     } catch (error) {

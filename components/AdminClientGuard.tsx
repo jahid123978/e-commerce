@@ -11,6 +11,7 @@ export default function AdminClientGuard({ children }: Props) {
     const checkAdmin = async () => {
       // 1. Read email from localStorage
       const email = localStorage.getItem("email");
+      console.log("email: ", email);
       if (!email) {
         router.replace("/");
         return;

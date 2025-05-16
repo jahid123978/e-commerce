@@ -23,7 +23,7 @@ const Header = () => {
   const pathname = usePathname();
   const apiBase = process.env.NEXT_PUBLIC_API_URL;
   const handleLogout = () => {
-    localStorage.removeItem("email");
+    localStorage.removeItem('email');
     dispatch(logout());
     dispatch(clearCart());
     dispatch(clearWishlist());

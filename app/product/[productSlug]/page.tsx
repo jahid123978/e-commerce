@@ -1,3 +1,4 @@
+"user client"
 import {
   StockAvailabillity,
   UrgencyText,
@@ -24,8 +25,8 @@ const SingleProductPage = async ({ params }: SingleProductPageProps) => {
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/slugs/${params.productSlug}`
   );
-  const product = await data.json();
-
+  const products = await data.json();
+  const product = products[0];
   // sending API request for more than 1 product image if it exists
   const imagesData = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/images/${product.id}`

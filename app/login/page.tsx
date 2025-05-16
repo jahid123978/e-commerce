@@ -29,9 +29,8 @@ try {
   // Save to localStorage if needed
   localStorage.setItem('token', token);
   localStorage.setItem('email', user.email);
-
+   toast.success('Login successful');
   dispatch(loginSuccess({ user, token }));
-  toast.success('Login successful');
   router.push('/');
   setError('');
   setLoading(false);

@@ -10,6 +10,16 @@ import {
   formatCategoryName,
 } from "@/utils/categoryFormating";
 
+function success({ title }: { title: string }) {
+  return(
+    <>
+    <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+  <span className="font-medium">{title}</span>
+</div>
+    </>
+  )
+}
+
 interface Product {
   id: number;
   title: string;
@@ -66,6 +76,8 @@ export default function DashboardProductDetails({
           fetchJson<OtherImage[]>(`${apiBase}/api/images/${id}`),
           fetchJson<Category[]>(`${apiBase}/api/categories`),
         ]);
+        const message = "Successfully updated information"
+        success({ title: message });
         setProduct(prod);
         setOtherImages(imgs);
         setCategories(cats);

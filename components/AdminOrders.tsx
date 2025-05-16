@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 interface Order {
   id: string;
   name: string;
@@ -28,6 +29,7 @@ const AdminOrders = () => {
         const response = await fetch(`${apiBase}/api/orders`);
         if (!response.ok) throw new Error("Failed to fetch orders");
         const data = await response.json();
+        // toast.success("Customer information update successful");
         setOrders(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch orders");

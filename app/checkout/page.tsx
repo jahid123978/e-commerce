@@ -97,10 +97,11 @@ const CheckoutPage = () => {
           total,
         }),
       });
-      if (!orderRes.ok) {
+      if (orderRes.status !== 200) {
         const err = await orderRes.json().catch(() => ({}));
         throw new Error(err.error || "Failed to create order");
       }
+      toast("Order created successfully!")
       const { id: orderId } = await orderRes.json();
 
       // 4. Link each product to the order in parallel
@@ -128,7 +129,6 @@ const CheckoutPage = () => {
       });
       dispatch(clearCart());
       toast.success("Order created successfully!");
-
       router.push("/");
     } catch (err: any) {
       console.error("makePurchase error:", err);
@@ -146,10 +146,12 @@ async function addOrderProduct(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ customerOrderId: orderId, productId, quantity }),
   });
-  if (!res.ok) {
+  
+  if (res.status !== 200) {
     const errBody = await res.json().catch(() => ({}));
     throw new Error(errBody.error || `Failed to add orderProduct for ${productId}`);
   }
+  toast.success("checkout successfully your order")
 }
   
 
