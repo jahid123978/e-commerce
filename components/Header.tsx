@@ -21,7 +21,7 @@ const Header = () => {
   const wishQuantity = useSelector((state: any) => state.wishlist.items.length);
    const allQuantity = useSelector((state: any) => state.cart.totalQuantity)
   const pathname = usePathname();
-  const apiBase = "http://localhost:3001";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   const handleLogout = () => {
     localStorage.removeItem("email");
     dispatch(logout());

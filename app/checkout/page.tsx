@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { isValidCardNumber, isValidCreditCardCVVOrCVC, isValidCreditCardExpirationDate, isValidEmailAddressFormat, isValidNameOrLastname } from "@/lib/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../redux/store/slices/cartSlice";
-const apiBase = "http://localhost:3001"
+const apiBase = process.env.NEXT_PUBLIC_API_URL;
 const CheckoutPage = () => {
   const [checkoutForm, setCheckoutForm] = useState({
     name: "",

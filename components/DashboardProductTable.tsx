@@ -7,7 +7,7 @@ const DashboardProductTable = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-const apiBase = "http://localhost:3001";
+const apiBase = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     const fetchProducts = async () => {
       try {

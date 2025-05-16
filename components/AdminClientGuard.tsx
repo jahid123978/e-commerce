@@ -18,7 +18,7 @@ export default function AdminClientGuard({ children }: Props) {
 
       try {
         // 2. Fetch user by email
-        const res = await fetch(`http://localhost:3001/api/users/email/${email}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${email}`, {
           cache: "no-store",
         });
         if (!res.ok) {

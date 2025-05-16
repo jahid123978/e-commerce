@@ -12,7 +12,7 @@ const WishlistPage = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: any) => state.user.user);
   const wishlist = useSelector((state: any) => state.wishlist.items);
-  const apiBase = "http://localhost:3001";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   async function getWishlistByUserId(userId: string): Promise<void> {
 
   // 1. Fetch raw wishlist entries

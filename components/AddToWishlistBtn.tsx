@@ -19,50 +19,6 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
 
 
   const [isProductInWishlist, setIsProductInWishlist] = useState<boolean>(false);
-
-  // const addToWishlistFun = async () => {
-  //   console.log("user", user);  
-  //   if (user?.email) {
-  //     try {
-  //       const userRes = await fetch(
-  //         `http://localhost:3001/api/users/email/${user.email}`,
-  //         { cache: "no-store" }
-  //       );
-  //       const userData = await userRes.json();
-
-  //       const res = await fetch("http://localhost:3001/api/wishlist", {
-  //         method: "POST",
-  //         headers: {
-  //           Accept: "application/json, text/plain, */*",
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify({
-  //           productId: product.id,
-  //           userId: userData.id,
-  //         }),
-  //       });
-
-  //       if (res.status === 200) {
-  //         dispatch(
-  //           addToWishlist({
-  //             id: product.id,
-  //             title: product.title,
-  //             price: product.price,
-  //             image: product.mainImage,
-  //             slug: product.slug,
-  //             stockAvailabillity: product.inStock,
-  //           })
-  //         );
-  //         toast.success("Product added to the wishlist");
-  //         setIsProductInWishlist(true);
-  //       }
-  //     } catch (error) {
-  //       console.error("Failed to add to wishlist", error);
-  //     }
-  //   } else {
-  //     toast.error("You need to be logged in to add a product to the wishlist");
-  //   }
-  // };
  
   const addToWishlistFun = async () => {
   if (!user?.email) {
@@ -70,7 +26,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
     return;
   }
 
-  const apiBase = "http://localhost:3001";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   try {
     // 1. Fetch user ID by email
     const userRes = await fetch(
@@ -113,32 +69,6 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
   }
 };
 
-  // const removeFromWishlistFun = async () => {
-  //   if (user?.email) {
-  //     try {
-  //       const userRes = await fetch(
-  //         `http://localhost:3001/api/users/email/${user.email}`,
-  //         { cache: "no-store" }
-  //       );
-  //       const userData = await userRes.json();
-
-  //       const res = await fetch(
-  //         `http://localhost:3001/api/wishlist/${userData.id}/${product.id}`,
-  //         {
-  //           method: "DELETE",
-  //         }
-  //       );
-
-  //       if (res.status === 204) {
-  //         dispatch(removeFromWishlist(product.id));
-  //         toast.success("Product removed from the wishlist");
-  //         setIsProductInWishlist(false);
-  //       }
-  //     } catch (error) {
-  //       console.error("Failed to remove from wishlist", error);
-  //     }
-  //   }
-  // };
 
 const removeFromWishlistFun = async () => {
   if (!user?.email) {
@@ -146,7 +76,7 @@ const removeFromWishlistFun = async () => {
     return;
   }
 
-  const apiBase = "http://localhost:3001";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   try {
     // 1. Fetch user ID by email
     const emailEncoded = encodeURIComponent(user.email);
@@ -185,34 +115,13 @@ const removeFromWishlistFun = async () => {
   }
 };
 
-  // const checkWishlistStatus = async () => {
-  //   if (user?.email) {
-  //     try {
-  //       const userRes = await fetch(
-  //         `http://localhost:3001/api/users/email/${user.email}`,
-  //         { cache: "no-store" }
-  //       );
-  //       const userData = await userRes.json();
-
-  //       const res = await fetch(
-  //         `http://localhost:3001/api/wishlist/${userData.id}/${product.id}`
-  //       );
-  //       const data = await res.json();
-
-  //       setIsProductInWishlist(!!data[0]?.id);
-  //     } catch (error) {
-  //       console.error("Failed to check wishlist status", error);
-  //     }
-  //   }
-  // };
-
   const checkWishlistStatus = async () => {
   if (!user?.email) {
     setIsProductInWishlist(false);
     return;
   }
 
-  const apiBase = "http://localhost:3001";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   try {
     // 1. Get user ID by email
     const emailEncoded = encodeURIComponent(user.email);
