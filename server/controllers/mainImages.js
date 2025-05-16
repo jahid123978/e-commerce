@@ -1,7 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const path = require('path');
-const uploadDir = '../public' // Adjust based on your structure
+const uploadDir = '..client/public' // Adjust based on your structure
 async function uploadMainImage(req, res) {
 
     try {
