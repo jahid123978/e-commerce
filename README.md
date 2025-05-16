@@ -1,12 +1,9 @@
-Here’s a concise, professional **README.md** for your GitHub repository:
-
-```markdown
 # Mini E-Commerce System
 
 A full-stack e-commerce platform with product management, cart functionality, and customer order processing.
 
-![Demo](https://via.placeholder.com/800x400?text=E-Commerce+Demo) *Replace with actual screenshots*
-
+![Demo](https://i.postimg.cc/PX7wjXHX/e-comerce-live.png) 
+![Demo](https://i.postimg.cc/GrSZZZsX/categories.png) 
 ## Features
 
 ### Backend (Node.js/MySQL)
@@ -97,13 +94,3 @@ Pull requests welcome! For major changes, open an issue first.
 Developed by [Your Name] • [Contact Email/LinkedIn]  
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ```
-
----
-
-### Key Notes:
-1. Replace placeholder links (`vercel.com`, `render.com`) with your actual URLs.
-2. Add real screenshots to the demo section.
-3. Include an `ecommerce.sql` file for database setup.
-4. Add a `LICENSE` file if using MIT (or other) licensing.
-
-This README balances brevity with essential technical details while guiding users through setup and usage. 🛒💻
