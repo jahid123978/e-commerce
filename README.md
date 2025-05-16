@@ -1,4 +1,4 @@
-# Mini E-Commerce System ![Live site](https://e-commerce-7akr.vercel.app/)
+# Mini E-Commerce System [https://e-commerce-7akr.vercel.app/](Live Site)
 
 A full-stack e-commerce platform with product management, cart functionality, and customer order processing.
 
@@ -78,8 +78,8 @@ curl -X GET "https://e-server-1-t5oi.onrender.com/api/products"
 ```
 
 ## Live Demo
-- **Frontend**: [https://e-commerce-7akr.vercel.app/](https://vercel.com)  
-- **Backend**: [https://e-server-1-t5oi.onrender.com](https://render.com)
+- **Frontend**: [https://e-commerce-7akr.vercel.app/](Live Site)  
+- **Backend**: [https://e-server-1-t5oi.onrender.com](Backend Api)
 
 ## Future Enhancements
 - Payment gateway integration (Stripe/PayPal)
