@@ -1,4 +1,4 @@
-# Mini E-Commerce System [https://e-commerce-7akr.vercel.app/](Live Site)
+# Mini E-Commerce System 
 
 A full-stack e-commerce platform with product management, cart functionality, and customer order processing.
 
