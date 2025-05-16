@@ -91,6 +91,6 @@ Pull requests welcome! For major changes, open an issue first.
 
 ---
 
-Developed by [Your Name] • [Contact Email/LinkedIn]  
+Developed by Jahid Hasan • jahidhasan21cse@gmail.com  
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ```
