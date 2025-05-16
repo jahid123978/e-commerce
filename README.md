@@ -78,8 +78,8 @@ curl -X GET "https://e-server-1-t5oi.onrender.com/api/products"
 ```
 
 ## Live Demo
-- **Frontend**: [https://e-commerce-7akr.vercel.app/](Live Site)  
-- **Backend**: [https://e-server-1-t5oi.onrender.com](Backend Api)
+- **Frontend**: [https://e-commerce-7akr.vercel.app/]
+- **Backend**: [https://e-server-1-t5oi.onrender.com]
 
 ## Future Enhancements
 - Payment gateway integration (Stripe/PayPal)
